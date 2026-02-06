@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('marca');
             $table->string('modelo');
+            $table-> string('cor');
             $table->year('ano');
+            $table-> string('status')->default('disponivel');
             $table->string('placa')->unique();
             $table->decimal('preco_diaria', 10, 2);
             $table->timestamps();
