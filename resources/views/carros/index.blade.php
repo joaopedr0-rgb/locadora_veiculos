@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
+@section('title', 'Lista de Carros')
+@section('content')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locadora de veiculos- @yield('title')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
 
-<body>
+
+
+
+
     <div class="box">
         <div class="container">
-            @yield('content')
             <h1>Lista de Carros </h1>
-            <a href="{{ route('carros.create') }}" class="btn btn-primary mb-3">Adicionar Carro</a>
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -53,6 +49,4 @@
             </table>
         </div>
     </div>
-</body>
-
-</html>
+@endsection

@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::get('/app', [CarrosController::class, 'index']);
+
 Route::get('/carros', [CarrosController::class,'index'])->name('carros.index');
 Route::get('/carros/create', [CarrosController::class, 'create'])->name('carros.create');
 Route::post('/carros', [CarrosController::class, 'store'])->name('carros.store');
