@@ -31,6 +31,7 @@ class ClientesController extends Controller
             'nome' => ['required', 'string', 'max:255'],
             'idade' => ['required', 'integer', 'min:0'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:clientes'],
+            'status' => ['required', 'string', 'max:50'],
         ]);
 
         Cliente::create($validated);
@@ -38,28 +39,28 @@ class ClientesController extends Controller
     }
 
    
-    public function edit(Cliente $clientes)
+    public function edit(Cliente $cliente)
     {
-        return view('clientes.edit', compact('clientes'));
+        return view('clientes.edit', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cliente $clientes)
+    public function update(Request $request, Cliente $cliente)
     {
-        $clientes = Cliente::findOrFail($clientes->id);
-        $clientes->update($request->all());
+        $cliente->update($request->all());
+        $cliente->update($request->all());
         return redirect()->route('clientes.index');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cliente $clientes)
+    public function destroy(Cliente $cliente)
     {   
-        $clientes = Cliente::findOrFail($clientes->id);
-        $clientes->delete();
+        $cliente = Cliente::findOrFail($cliente->id);
+        $cliente->delete();
         return redirect()->route('clientes.index');
     }
 }

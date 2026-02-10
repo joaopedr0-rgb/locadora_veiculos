@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nome');
             $table->string('idade');
             $table->string('email');
+            $table->string('status')->default('ativo');
             $table->timestamps();
         });
     }

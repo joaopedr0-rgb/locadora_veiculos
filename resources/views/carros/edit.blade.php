@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.app')
 @section('title', 'Editar Carro')
 @section('content')
     <div class="container mt-5">
@@ -44,8 +44,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="status" class="form-label">Status</label>
-                        <input type="text" class="form-control" id="status" name="status" value="{{ $carro->status }}"
-                            required>
+                        <input type="text" class="form-control" id="status" name="status" value="{{ $carro->status }}"required>
                     </div>
                     <div class="mb-3">
                         <label for="preco_diaria" class="form-label">Preço Diária</label>
